@@ -30,7 +30,7 @@ public class AddressBook {
         System.out.println("Contact is added");
     }
 
-    // USE CASE 3
+    // USE CASE 3: Edit existing contact
     public void editContact(String firstName, String lastName) {
         for (Contact contact : adBook) {
             if (contact.firstName.equalsIgnoreCase(firstName) && contact.lastName.equalsIgnoreCase(lastName)) {
@@ -52,7 +52,7 @@ public class AddressBook {
         System.out.println("Contact not found");
     }
 
-    // USE CASE 4 Delete Contact
+    // USE CASE: 4 Delete Contact
     public void deleteContact(String firstName, String lastName) {
         Contact toDelete = null;
         for (Contact contact : adBook) {
@@ -69,4 +69,15 @@ public class AddressBook {
         }
     }
 
+    // USE CASE 5: Add multiple contacts
+    public void createMultipleContacts() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of contacts to add:");
+        int numContacts = sc.nextInt();
+        for (int i = 0; i < numContacts; i++) {
+            System.out.println("Adding contact " + (i + 1) + ":");
+            createContact();
+        }
+        System.out.println(numContacts + " contacts have been added.");
+    }
 }
