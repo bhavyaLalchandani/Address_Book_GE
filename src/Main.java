@@ -11,6 +11,7 @@ public class Main {
                     "\nEnter 2 to display existing contacts" +
                     "\nEnter 3 to edit an existing contact" +
                     "\nEnter 4 to delete an existing contact" +
+                    "\nEnter 5 to add multiple contacts" +
                     "\nEnter 0 to exit"
             );
             int input = sc.nextInt();
@@ -30,6 +31,7 @@ public class Main {
                     String lastName = sc.next();
                     a1.deleteContact(firstName, lastName);
                 }
+                case 5 -> a1.createMultipleContacts();
                 case 0 -> System.exit(0);
                 default -> System.out.println("Wrong Input");
             }
