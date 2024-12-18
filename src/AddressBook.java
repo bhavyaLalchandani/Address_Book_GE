@@ -30,7 +30,7 @@ public class AddressBook {
         System.out.println("Contact is added");
     }
 
-    // USE CASE 2
+    // USE CASE 3
     public void editContact(String firstName, String lastName) {
         for (Contact contact : adBook) {
             if (contact.firstName.equalsIgnoreCase(firstName) && contact.lastName.equalsIgnoreCase(lastName)) {
@@ -51,4 +51,22 @@ public class AddressBook {
         }
         System.out.println("Contact not found");
     }
+
+    // USE CASE 4 Delete Contact
+    public void deleteContact(String firstName, String lastName) {
+        Contact toDelete = null;
+        for (Contact contact : adBook) {
+            if (contact.firstName.equalsIgnoreCase(firstName) && contact.lastName.equalsIgnoreCase(lastName)) {
+                toDelete = contact;
+                break;
+            }
+        }
+        if (toDelete != null) {
+            adBook.remove(toDelete);
+            System.out.println("Contacts named " + firstName + " " + lastName + " deleted successfully");
+        } else {
+            System.out.println("Contact not found");
+        }
+    }
+
 }
