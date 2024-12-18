@@ -21,14 +21,14 @@ public class Contact {
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
-                ", zip=" + zip +
+        return "Contact {" +
+                "Name='" + firstName + '\'' +
+                ", SurName='" + lastName + '\'' +
+                ", City='" + city + '\'' +
+                ", State='" + state + '\'' +
+                ", Email='" + email + '\'' +
+                ", Phone=" + phone +
+                ", Zip=" + zip +
                 '}';
     }
 }

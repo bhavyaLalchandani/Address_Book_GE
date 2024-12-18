@@ -7,12 +7,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Address book");
         do {
-            System.out.println("Enter 1 to create a new contact \nEnter 2 to display existing contacts");
+            System.out.println(
+                    "Enter 1 to create a new contact" +
+                    "\nEnter 2 to display existing contacts" +
+                    "\nEnter 3 to edit an existing contact"
+            );
             int input = sc.nextInt();
 
             switch (input) {
                 case 1 -> a1.createContact();
                 case 2 -> a1.display();
+                case 3 -> {
+                    System.out.println("Enter first and last name of contact to edit");
+                    String firstName = sc.next();
+                    String lastName = sc.next();
+                    a1.editContact(firstName, lastName);
+                }
                 default -> System.out.println("Wrong input");
             }
 
