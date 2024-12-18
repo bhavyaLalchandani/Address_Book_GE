@@ -7,6 +7,8 @@ public class AddressBook {
     public void display(){
         System.out.println(adBook);
     }
+
+    // USE CASE 1
     public void createContact() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter First name");
