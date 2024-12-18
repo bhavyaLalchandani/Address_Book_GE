@@ -29,4 +29,26 @@ public class AddressBook {
         adBook.add(c1);
         System.out.println("Contact is added");
     }
+
+    // USE CASE 2
+    public void editContact(String firstName, String lastName) {
+        for (Contact contact : adBook) {
+            if (contact.firstName.equalsIgnoreCase(firstName) && contact.lastName.equalsIgnoreCase(lastName)) {
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Enter updated City");
+                contact.city = sc.next();
+                System.out.println("Enter updated State");
+                contact.state = sc.next();
+                System.out.println("Enter updated Email");
+                contact.email = sc.next();
+                System.out.println("Enter updated Phone");
+                contact.phone = sc.nextLong();
+                System.out.println("Enter updated Zip");
+                contact.zip = sc.nextInt();
+                System.out.println("Contact updated successfully");
+                return;
+            }
+        }
+        System.out.println("Contact not found");
+    }
 }
