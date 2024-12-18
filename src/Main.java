@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         AddressBook a1 = new AddressBook();
-        int i = 1;
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to Address book");
         do {
             System.out.println(
                     "Enter 1 to create a new contact" +
                     "\nEnter 2 to display existing contacts" +
-                    "\nEnter 3 to edit an existing contact"
+                    "\nEnter 3 to edit an existing contact" +
+                    "\nEnter 4 to delete an existing contact" +
+                    "\nEnter 0 to exit"
             );
             int input = sc.nextInt();
 
@@ -23,13 +24,17 @@ public class Main {
                     String lastName = sc.next();
                     a1.editContact(firstName, lastName);
                 }
-                default -> System.out.println("Wrong input");
+                case 4 -> {
+                    System.out.println("Enter first and last name of contact to delete");
+                    String firstName = sc.next();
+                    String lastName = sc.next();
+                    a1.deleteContact(firstName, lastName);
+                }
+                case 0 -> System.exit(0);
+                default -> System.out.println("Wrong Input");
             }
 
             System.out.println("Enter 0 to exit");
-        } while (i != 0);
-
-        System.out.println("Thank you for using address book");
-        sc.close();
+        } while (true);
     }
 }
